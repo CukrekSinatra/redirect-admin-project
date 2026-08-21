@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard - Admin Panel</title><link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+  <div class="brand">🚀 ADMIN PANEL</div>
+  <nav>
+    <a class="active" href="#dashboard">Dashboard</a>
+    <a href="#generate">Generate Link</a>
+    <a href="#links">My Links</a>
+  </nav>
+  <button id="logout" class="logout">Logout</button>
+</aside>
+<main class="main">
+  <header class="topbar"><h1>Dashboard</h1><span>Admin</span></header>
+
+  <section class="stats">
+    <div class="stat"><span>Total Links</span><strong id="totalLinks">0</strong></div>
+    <div class="stat"><span>Total Klik</span><strong id="totalClicks">0</strong></div>
+  </section>
+
+  <section id="generate" class="panel">
+    <h2>Generate Link Baru</h2>
+    <p class="muted">Buat link redirect yang tersimpan di Cloudflare KV.</p>
+    <label>URL Tujuan</label>
+    <input id="destination" type="url" placeholder="https://example.com" required>
+    <label>Alias / Slug (opsional)</label>
+    <input id="slug" placeholder="promo123">
+    <button id="generateBtn" class="primary">Generate Link</button>
+    <div id="generateMsg" class="message"></div>
+  </section>
+
+  <section id="links" class="panel">
+    <div class="panel-head"><div><h2>Daftar Link</h2><p class="muted">Link yang tersimpan.</p></div>
+    <button id="refreshBtn" class="secondary">Refresh</button></div>
+    <div id="linksList" class="table-wrap"></div>
+  </section>
+</main>
+</div>
+<script src="js/config.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
